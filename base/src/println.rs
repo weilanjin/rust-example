@@ -17,7 +17,11 @@ fn println() {
 
     let s = "lance";
     println!("{}", s); // 不带引号（Display 风格）
-    println!("{:?}", s) // 带引号 （Debug 风格） #[derive(Debug)]
+    println!("{:?}", s); // 带引号 （Debug 风格） #[derive(Debug)]
+
+    println!("{1}, {0}, {0}, {1}", "sql", "拼接");
+    // SELECT username,age, FROM users
+    println!("SELECT {n},{a} FROM {t}", n="username", a="age", t="users" );
 
     /*
         { }        → Display
