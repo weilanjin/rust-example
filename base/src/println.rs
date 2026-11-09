@@ -13,7 +13,7 @@ fn println() {
     println!("Hello, {}!", "Rust"); // {} 这个就会一个槽，目标打印实现 Display trait
     println!("{}", 3.14);
     println!("{}", true);
-    println!("{:?}", vec![1,2,3]);
+    println!("{:?}", vec![1, 2, 3]);
 
     let s = "lance";
     println!("{}", s); // 不带引号（Display 风格）
@@ -32,28 +32,30 @@ fn println() {
 // =========================
 //  2. 对齐
 
-
 #[test]
 fn printin_align() {
-    println!("\"{:>8}\"", 42);  // "      42"
-    println!("\"{:<8}\"", 42);  // "42      "
-    println!("\"{:^8}\"", 42);  // "   42   "
+    println!("\"{:>8}\"", 42); // "      42"
+    println!("\"{:<8}\"", 42); // "42      "
+    println!("\"{:^8}\"", 42); // "   42   "
     println!("\"{:*^8}\"", 42); // "***42***"
     println!("\"{:0>5}\"", 42); // "00042"
 
     println!("-----------");
 
-    println!("{:>w$}", 42, w = 8);      // 命名参数作宽度
-    println!("{:>1$}", 42, 8);          // 位置 1 作宽度
+    println!("{:>w$}", 42, w = 8); // 命名参数作宽度
+    println!("{:>1$}", 42, 8); // 位置 1 作宽度
     println!("{:.p$}", 3.14159, p = 3); // 3.142
-    println!("{:.*}", 3, 3.14159);      // 3.142（精度由下一个参数给）
+    println!("{:.*}", 3, 3.14159); // 3.142（精度由下一个参数给）
 }
 
 // =========================
 //  3. 打印对象
 
 #[derive(Debug)] // 没有强烈的自定义需求推荐这个
-struct Point{x:i32,y:i32}
+struct Point {
+    x: i32,
+    y: i32,
+}
 
 // struct 加了字段之后就会漏
 impl fmt::Display for Point {
@@ -62,11 +64,13 @@ impl fmt::Display for Point {
     }
 }
 
+const _: Point = Point { x: 3, y: 9 };
+
 #[test]
 fn printin_struct() {
-    let p = Point{x:3,y:9};
+    let p = Point { x: 3, y: 9 };
 
-    println!("{}",  p);   // (1, 2)
+    println!("{}", p); // (1, 2)
     println!("{:?}", p); // Point { x: 3, y: 9 }
     println!("{:#?}", p);
     /*
@@ -76,4 +80,3 @@ fn printin_struct() {
         }
     */
 }
-
