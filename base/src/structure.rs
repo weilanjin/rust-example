@@ -18,6 +18,14 @@ fn find(id: u64) -> Result<u64, NotFound> {
 
 struct Pair(i32, f32);
 
+// 结构体方法
+impl Pair {
+    // `self` 是 `self: Self` 的语法糖
+    fn destroy(self) {
+        println!("{} {}", self.0, self.1);
+    }
+}
+
 #[test]
 fn structures() {
     let name = String::from("John");
