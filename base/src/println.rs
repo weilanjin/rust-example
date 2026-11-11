@@ -21,7 +21,12 @@ fn println() {
 
     println!("{1}, {0}, {0}, {1}", "sql", "拼接");
     // SELECT username,age, FROM users
-    println!("SELECT {n},{a} FROM {t}", n="username", a="age", t="users" );
+    println!(
+        "SELECT {n},{a} FROM {t}",
+        n = "username",
+        a = "age",
+        t = "users"
+    );
 
     /*
         { }        → Display

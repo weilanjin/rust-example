@@ -1,3 +1,15 @@
+// 别名
+type NanoSecond = u64;
+type Inch = u64;
+
+#[test]
+fn alias() {
+    let ns: NanoSecond = 1;
+    let inch: Inch = 2;
+
+    println!("NanoSecond {}, Inch {}", ns, inch);
+}
+
 #[test]
 fn primitive_types() {
     // 标准数据类型
@@ -26,4 +38,16 @@ fn primitive_types() {
     let tuple = (n1, n2, port, is_ok);
 
     println!("tuple {:?}", tuple); // tuple (1, 20, 3306, true)
+}
+
+// 类型转换
+#[test]
+fn type_as() {
+    let decimal = 65.4321_f32;
+    let integer = decimal as u8; // 显式转换
+
+    println!("{:?}", integer); // 65
+
+    // 浮点数不能直接转成字符
+    // let character = decimal as char;
 }

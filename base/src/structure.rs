@@ -13,11 +13,7 @@ struct Unit;
 struct NotFound; // 没有字段可带，但类型有名有姓
 
 fn find(id: u64) -> Result<u64, NotFound> {
-    if id == 0 {
-        Err(NotFound)
-    } else {
-        Ok(id)
-    }
+    if id == 0 { Err(NotFound) } else { Ok(id) }
 }
 
 struct Pair(i32, f32);
@@ -33,4 +29,3 @@ fn structures() {
     let pair = Pair(1, 0.1);
     println!("Unit {:?}, pair {}", unit, pair.0); // Unit Unit, pair 1
 }
-

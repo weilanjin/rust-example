@@ -1,4 +1,3 @@
-
 // ----------------------
 // 元组
 
@@ -21,14 +20,13 @@ fn tuple() {
 #[test]
 fn array() {
     let arr1 = [1, 2, 3, 4, 5];
-    let arr2:[char;4] = ['a', 'b', 'c', 'd'];
+    let arr2: [char; 4] = ['a', 'b', 'c', 'd'];
 
     println!("arr {:?}", arr1);
     println!("arr2 len {}", arr2.len());
 
     // arr1.map()
 }
-
 
 // ----------------------
 // 切片
@@ -42,9 +40,10 @@ fn slice() {
     analyze_slice(&ys[1..4]); // 0, 3
 
     // .get() 安全访问数组 返回一个 Option
-    for i in 0 .. xs.len() + 1 { // +1 超出了访问范围
+    for i in 0..xs.len() + 1 {
+        // +1 超出了访问范围
         match xs.get(i) {
-            Some(xval) => println!("{}, {}",i, xval),
+            Some(xval) => println!("{}, {}", i, xval),
             None => println!("{} not found", i),
         }
     }
