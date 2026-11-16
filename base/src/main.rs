@@ -10,6 +10,7 @@ mod tuple_array_slice;
 mod types;
 mod func;
 mod generics;
+mod scope_rules;
 
 fn main() {
     println!("Hello, world!");

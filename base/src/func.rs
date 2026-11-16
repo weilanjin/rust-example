@@ -117,19 +117,23 @@ fn fn_out_args() {
 // ------------------------------
 // 高阶函数 Higher Order Fn
 // 可以实现惰性执行
-
-fn is_odd(n: u32) -> bool {
-    n % 2 == 1
-}
+/*
+    fn is_odd(n: u32) -> bool {
+        n % 2 == 1
+    }
+*/
 
 // ------------------------------
 // 发散函数
 // 永远返回
-fn foo() -> ! {
-    panic!("This function is not called");
-}
 
-// 这个不是发散 恰好有一个可能的值
-fn some_fn() {
-    ()
-}
+/*
+    fn foo() -> ! {
+        panic!("This function is not called");
+    }
+
+    // 这个不是发散 恰好有一个可能的值
+    fn some_fn() {
+        ()
+    }
+*/

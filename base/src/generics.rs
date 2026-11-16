@@ -1,9 +1,9 @@
+#![allow(dead_code)]
+
 use std::fmt::{Debug, Display};
 
-#[allow(dead_code)]
-
 // 泛型
-fn foo<T>(arg: T) {}
+fn foo<T>(_: T) {}
 
 struct SingleGen<T>(T);
 
@@ -15,8 +15,8 @@ trait DoubleGen<T> {
 
 struct S<T: Display>(T);
 
-fn compare_prints<T: Debug + Display>(t: &T) {}
-fn compare_types<T: Debug, U: Display>(t: &T, u: &U) {}
+fn compare_prints<T: Debug + Display>(_: &T) {}
+fn compare_types<T: Debug, U: Display>(_: &T, _: &U) {}
 
 trait Contains {
     type A;
