@@ -9,6 +9,7 @@ mod structure;
 mod tuple_array_slice;
 mod types;
 mod func;
+mod generics;
 
 fn main() {
     println!("Hello, world!");
